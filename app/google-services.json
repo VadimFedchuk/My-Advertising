@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "365545990788",
+    "firebase_url": "https://myadvertising-f623c.firebaseio.com",
+    "project_id": "myadvertising-f623c",
+    "storage_bucket": "myadvertising-f623c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:365545990788:android:cf91367d6a92b4af42f0d1",
+        "android_client_info": {
+          "package_name": "com.vadimfedchuk.myadvertising"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "365545990788-bdq874pk3o2m1bmd4f6lrbm069p3fm78.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIRh-M-AQH9_z7dr7p40YqHFsTty_qQig"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "365545990788-bdq874pk3o2m1bmd4f6lrbm069p3fm78.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

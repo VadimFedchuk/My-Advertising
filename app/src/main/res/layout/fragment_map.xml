@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.main.MapFragment"
+    android:animateLayoutChanges="true">
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:name="com.google.android.gms.maps.MapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <androidx.core.widget.ContentLoadingProgressBar
+        android:id="@+id/progressBar_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?android:attr/progressBarStyle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_not_find_location"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginBottom="100dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/mapView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/background_dialog_not_location"
+        android:visibility="invisible">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_map_loc"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="36dp"
+            android:fontFamily="@font/avenirnext_demibold_03"
+            android:gravity="center"
+            android:text="@string/title_location_not_found"
+            android:textColor="@color/text_color_white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/avenirnext_demibold_03"
+            android:text="@string/title_turn_on_location"
+            android:textColor="@color/text_color_yellow"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/avenirnext_demibold_03"
+            android:text="@string/title_specify_manually"
+            android:textColor="@color/text_color_yellow"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_category"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/color_background_alternative"
+        app:layout_constraintBottom_toTopOf="@+id/layout_show_all"
+        tools:context=".CountryActivity"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        tools:listitem="@layout/item_category"/>
+
+    <LinearLayout
+        android:id="@+id/layout_show_all"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/background_show_all"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/mapView"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="32dp">
+
+        <TextView
+            android:id="@+id/show_all_tv"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="36dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/avenirnext_demibold_03"
+            android:gravity="center"
+            android:text="@string/title_show_all"
+            android:textColor="@color/text_color_white"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/imageView_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="16dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_arrow_down_yellow" />
+
+    </LinearLayout>
+
+    <include layout="@layout/layout_detail_order" />
+<!--    <include layout="@layout/layout_pay_order" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_profile"
+        android:title="@string/profile"
+        android:icon="@drawable/ic_user" />
+    <item android:id="@+id/action_message"
+        android:title="@string/messages"
+        android:icon="@drawable/ic_message_square" />
+    <item android:id="@+id/action_history"
+        android:title="@string/history"
+        android:icon="@drawable/ic_archive" />
+    <item android:id="@+id/action_map"
+        android:title="@string/map"
+        android:icon="@drawable/ic_map" />
+</menu>

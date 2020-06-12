@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background"
+    tools:context=".ui.fragment.login.EnterFragment">
+
+        <LinearLayout
+            android:id="@+id/back_button_confirm_code"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/ic_arrow_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_back"
+                android:textColor="@color/text_color_white"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/avenirnext_regular_08"/>
+        </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="@string/title_confirm_top"
+        android:textColor="@color/text_color_white"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:fontFamily="@font/avenirnext_demibold_03"/>
+
+    <TextView
+        android:id="@+id/text_two"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_confirm"
+        android:layout_marginRight="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="40dp"
+        android:textColor="@color/text_color_white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_one"
+        android:fontFamily="@font/avenirnext_regular_08"/>
+
+    <com.chaos.view.PinView
+        android:id="@+id/pinView"
+        style="@style/PinWidget.PinView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:cursorVisible="true"
+        android:hint="Введите код СМС"
+        android:inputType="number"
+        android:textColor="@color/text_color_white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:cursorColor="@color/text_color_white"
+        app:cursorWidth="2dp"
+        app:hideLineWhenFilled="false"
+        app:itemCount="4"
+        app:itemHeight="40dp"
+        app:itemRadius="4dp"
+        app:itemSpacing="12dp"
+        app:itemWidth="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/confirm_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_two"
+        app:layout_constraintVertical_bias="0.352"
+        app:lineColor="@color/colorPrimary"
+        app:lineWidth="2dp"
+        app:viewType="rectangle"
+        android:layout_marginTop="16dp">
+
+    </com.chaos.view.PinView>
+
+    <TextView
+        android:id="@+id/timer_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="40dp"
+        android:fontFamily="@font/avenirnext_regular_08"
+        android:gravity="center"
+        tools:text="53c"
+        android:textColor="@color/text_color_white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/confirm_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pinView"
+        app:layout_constraintVertical_bias="0.394" />
+
+    <Button
+        android:id="@+id/confirm_code_button"
+        android:layout_width="256dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="76dp"
+        android:background="@drawable/background_button_enter"
+        android:fontFamily="@font/avenirnext_demibold_03"
+        android:text="@string/title_confirm"
+        android:textColor="@color/text_color_blue"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:layout_width="100dp"
+        android:layout_height="3dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/background_button_enter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enter_button"
+        app:layout_constraintVertical_bias="0.543" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

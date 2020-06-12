@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="570dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginStart="28dp"
+    android:layout_marginEnd="28dp"
+    android:background="@drawable/background_dialog_not_location"
+    app:layout_constraintBottom_toTopOf="@+id/layout_show_all"
+    app:layout_constraintTop_toTopOf="@+id/mapView"
+    tools:layout_editor_absoluteX="20dp"
+    tools:showIn="@layout/fragment_map"
+    android:id="@+id/dialog_detail_order"
+    android:visibility="gone">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:src="@drawable/ic_bookmark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/close_detail_order_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:drawableStart="@drawable/ic_arrow_down_yellow"
+        android:drawablePadding="8dp"
+        android:fontFamily="@font/avenirnext_regular_08"
+        android:padding="4dp"
+        android:text="@string/map"
+        android:textColor="@color/shadow_white"
+        android:textSize="19sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/choose_photo_order_iv"
+        android:layout_width="300dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="5dp"
+        android:scaleType="fitXY"
+        android:background="@drawable/background_photo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/close_detail_order_tv" />
+
+<!--    <TextView-->
+<!--        android:id="@+id/title_photo"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:fontFamily="@font/avenirnext_regular_08"-->
+<!--        android:gravity="center"-->
+<!--        android:text="@string/photo_object_title"-->
+<!--        android:textColor="@color/shadow_white"-->
+<!--        android:textSize="19sp"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/choose_photo_order_iv"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/choose_photo_order_iv"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/choose_photo_order_iv"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/choose_photo_order_iv" />-->
+
+    <com.iarcuschin.simpleratingbar.SimpleRatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/title_adv_tv"
+        app:layout_constraintTop_toBottomOf="@+id/choose_photo_order_iv"
+        app:srb_borderColor="#f0f000"
+        app:srb_fillColor="#f0f000"
+        app:srb_numberOfStars="5"
+        android:layout_marginTop="10dp"
+        app:srb_rating="4"
+        app:srb_starSize="20dp"
+        app:srb_stepSize="1" />
+
+    <TextView
+        android:id="@+id/title_adv_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/avenirnext_demibold_03"
+        android:text="@string/example_title"
+        android:textColor="@color/text_color_white"
+        android:textSize="19sp"
+        app:layout_constraintStart_toStartOf="@+id/choose_photo_order_iv"
+        app:layout_constraintTop_toBottomOf="@+id/choose_photo_order_iv" />
+
+    <TextView
+        android:id="@+id/title_adv_address_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="3dp"
+        android:fontFamily="@font/avenirnext_regular_08"
+        android:text="@string/example_adress"
+        android:textColor="@color/shadow_white"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/choose_photo_order_iv"
+        app:layout_constraintTop_toBottomOf="@+id/title_adv_tv" />
+
+    <TextView
+        android:id="@+id/title_price_month_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/avenirnext_regular_08"
+        android:text="@string/price_for_month"
+        android:textColor="@color/text_color_white"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/choose_photo_order_iv"
+        app:layout_constraintTop_toBottomOf="@+id/title_adv_address_tv" />
+
+    <TextView
+        android:id="@+id/price_month_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/avenirnext_demibold_03"
+        android:text="12000 \u20bd"
+        android:textColor="@color/text_color_white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/choose_photo_order_iv"
+        app:layout_constraintTop_toBottomOf="@+id/title_adv_address_tv" />
+
+    <TextView
+        android:id="@+id/title_price_year_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/avenirnext_regular_08"
+        android:text="@string/price_for_year"
+        android:textColor="@color/text_color_white"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/choose_photo_order_iv"
+        app:layout_constraintTop_toBottomOf="@+id/title_price_month_tv" />
+
+    <TextView
+        android:id="@+id/price_year_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/avenirnext_demibold_03"
+        android:text="127000 \u20bd"
+        android:textColor="@color/text_color_white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/choose_photo_order_iv"
+        app:layout_constraintTop_toBottomOf="@+id/price_month_tv" />
+
+    <TextView
+        android:id="@+id/title_date_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/avenirnext_regular_08"
+        android:text="@string/title_busy_for"
+        android:textColor="@color/text_color_white"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/choose_photo_order_iv"
+        app:layout_constraintTop_toBottomOf="@+id/title_price_year_tv" />
+
+    <TextView
+        android:id="@+id/date_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/avenirnext_demibold_03"
+        android:text="31.12.2019"
+        android:textColor="@color/text_color_white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/choose_photo_order_iv"
+        app:layout_constraintTop_toBottomOf="@+id/price_year_tv" />
+
+    <TextView
+        android:id="@+id/title_block_date_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/avenirnext_demibold_03"
+        android:text="@string/write_date_you_want"
+        android:textColor="@color/text_color_white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/choose_photo_order_iv"
+        app:layout_constraintTop_toBottomOf="@+id/date_tv" />
+
+    <Button
+        android:id="@+id/date_from_button"
+        android:layout_width="140dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/background_button_date"
+        android:fontFamily="@font/avenirnext_demibold_03"
+        android:text="@string/date_from"
+        android:textColor="@color/text_color_white"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/title_date_tv"
+        app:layout_constraintTop_toBottomOf="@+id/title_block_date_tv" />
+
+    <Button
+        android:id="@+id/date_to_button"
+        android:layout_width="140dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/background_button_date"
+        android:fontFamily="@font/avenirnext_demibold_03"
+        android:text="@string/date_to"
+        android:textColor="@color/text_color_white"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@id/date_tv"
+        app:layout_constraintTop_toBottomOf="@+id/title_block_date_tv" />
+
+    <TextView
+        android:id="@+id/title_is_adv_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:drawableLeft="@drawable/ic_check"
+        android:drawablePadding="8dp"
+        android:fontFamily="@font/avenirnext_regular_08"
+        android:text="@string/is_adv_material"
+        android:textColor="@color/shadow_white"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date_to_button" />
+
+    <TextView
+        android:id="@+id/order_tv"
+        android:layout_width="140dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/avenirnext_demibold_03"
+        android:gravity="center"
+        android:text="@string/order"
+        android:textColor="@color/color_yellow"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_is_adv_tv" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
