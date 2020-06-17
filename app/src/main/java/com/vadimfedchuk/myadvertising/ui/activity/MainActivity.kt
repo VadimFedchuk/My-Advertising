@@ -1,18 +1,19 @@
 package com.vadimfedchuk.myadvertising.ui.activity
 
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.FirebaseApp
-import com.google.firebase.FirebaseOptions
+import com.google.firebase.iid.FirebaseInstanceId
 import com.vadimfedchuk.myadvertising.R
 import com.vadimfedchuk.myadvertising.ui.fragment.main.*
+import com.vadimfedchuk.myadvertising.utils.ShPreferences
 import com.vadimfedchuk.myadvertising.utils.setGone
 import com.vadimfedchuk.myadvertising.utils.setVisible
 import kotlinx.android.synthetic.main.activity_main.*
-import java.io.FileInputStream
 
 
 class MainActivity : AppCompatActivity(),
@@ -23,9 +24,18 @@ class MainActivity : AppCompatActivity(),
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        getToken()
         FirebaseApp.initializeApp(this);
         initBottomBar()
+    }
+
+    private fun getToken() {
+        FirebaseInstanceId.getInstance().instanceId
+            .addOnSuccessListener { instanceIdResult ->
+                Log.i("TEST", "newtoken")
+                val deviceToken = instanceIdResult.token
+                ShPreferences.setTokenFirebase(deviceToken, this)
+            }
     }
 
     private fun initBottomBar() {

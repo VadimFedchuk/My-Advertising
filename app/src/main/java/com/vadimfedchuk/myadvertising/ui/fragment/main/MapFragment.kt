@@ -133,7 +133,7 @@ class MapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListe
         viewModel.sendFirebaseToken(ShPreferences.getToken(requireContext()) ?: "",
             ShPreferences.getTokenFirebase(requireContext())?: "")?.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
             if(it.error == null || it.error == false) {
-                Log.i("TEST", it.toString())
+                Toast.makeText(requireContext(), it.message, Toast.LENGTH_LONG).show()
 
             } else {
                 it.message?.shortToast(requireContext())

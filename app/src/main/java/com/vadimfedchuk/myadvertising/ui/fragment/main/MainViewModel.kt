@@ -34,6 +34,7 @@ class MainViewModel : ViewModel(), LifecycleObserver {
     private var addUserAvatarData: LiveData<AddUserAvatarResponse>? = null
     private var updateUserData: LiveData<LoginResponse>? = null
     private var subscribeData:LiveData<RegistrationResponse>? = null
+    private var isSendFirebaseToken:Boolean = false
 
     init {
         initializeDagger()
@@ -85,11 +86,16 @@ class MainViewModel : ViewModel(), LifecycleObserver {
     }
 
     fun sendFirebaseToken(token: String, firebaseToken:String):LiveData<RegistrationResponse>? {
-        subscribeData = null
-        subscribeData = MutableLiveData<RegistrationResponse>()
-        subscribeData = repository.sendFirebaseToken(token, firebaseToken)
-        return subscribeData
+        if (!isSendFirebaseToken) {
+            isSendFirebaseToken = true
+            subscribeData = null
+            subscribeData = MutableLiveData<RegistrationResponse>()
+            subscribeData = repository.sendFirebaseToken(token, firebaseToken)
+            return subscribeData
+        } else
+            return null
     }
+
 
     private fun initializeDagger() = AdvertisingApplication.appComponent.inject(this)
 }

@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.core.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".ui.fragment.login.EnterFragment"
     android:background="@color/main_background">
 
@@ -20,15 +24,15 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:gravity="center"
-        android:textSize="18sp"
-        android:fontFamily="@font/avenirnext_regular_08"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/avenirnext_regular_08"
+        android:gravity="center"
         android:text="@string/title_welcome"
         android:textColor="@color/text_color_white"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/number_phone_et"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo" />
 
     <EditText
@@ -110,10 +114,12 @@
         android:id="@+id/layout_enter_social"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registration_tv"
-        android:gravity="center_horizontal">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registration_tv">
 
         <ImageButton
             android:id="@+id/vk_enter_button"
@@ -126,25 +132,25 @@
             android:id="@+id/facebook_enter_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
             android:background="@android:color/transparent"
-            android:src="@drawable/ic_facebook"
-            android:layout_marginStart="20dp"/>
+            android:src="@drawable/ic_facebook" />
 
         <ImageButton
             android:id="@+id/google_enter_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
             android:background="@android:color/transparent"
-            android:src="@drawable/ic_google"
-            android:layout_marginStart="20dp"/>
+            android:src="@drawable/ic_google" />
 
         <ImageButton
             android:id="@+id/ok_enter_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
             android:background="@android:color/transparent"
-            android:src="@drawable/ic_ok"
-            android:layout_marginStart="20dp"/>
+            android:src="@drawable/ic_ok" />
     </LinearLayout>
 
     <View
@@ -157,3 +163,4 @@
         app:layout_constraintTop_toBottomOf="@+id/layout_enter_social"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
