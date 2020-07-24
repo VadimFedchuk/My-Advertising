@@ -74,7 +74,6 @@ class RegistrationViewModel  : ViewModel(), LifecycleObserver {
         subscribeData = null
         subscribeData = MutableLiveData<RegistrationResponse>()
         subscribeData = repository.sendFirebaseToken(token, firebaseToken)
-        Log.i("TEST", "3 " + subscribeData.toString())
         return subscribeData
     }
 
@@ -82,7 +81,6 @@ class RegistrationViewModel  : ViewModel(), LifecycleObserver {
         unSubscribeViewModel()
         super.onCleared()
     }
-
 
     private fun initializeDagger() = AdvertisingApplication.appComponent.inject(this)
 }

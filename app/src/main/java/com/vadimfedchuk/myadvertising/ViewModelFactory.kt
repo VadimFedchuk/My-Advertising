@@ -1,7 +1,6 @@
 package com.vadimfedchuk.myadvertising
 
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.vadimfedchuk.myadvertising.ui.fragment.login.registration.RegistrationViewModel

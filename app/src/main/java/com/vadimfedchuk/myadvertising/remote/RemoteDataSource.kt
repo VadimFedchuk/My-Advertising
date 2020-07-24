@@ -1,11 +1,10 @@
 package com.vadimfedchuk.myadvertising.remote
 
-import android.content.Context
+
 import com.vadimfedchuk.myadvertising.remote.request.CreateOrderRequest
 import com.vadimfedchuk.myadvertising.remote.request.FirebaseTokenRequest
 import com.vadimfedchuk.myadvertising.remote.request.RegistrationRequest
 import okhttp3.MultipartBody
-import okhttp3.RequestBody
 import javax.inject.Inject
 import javax.inject.Singleton
 

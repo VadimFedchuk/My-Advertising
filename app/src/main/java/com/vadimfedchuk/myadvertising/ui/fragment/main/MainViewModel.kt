@@ -1,7 +1,7 @@
 package com.vadimfedchuk.myadvertising.ui.fragment.main
 
 
-import android.net.Uri
+
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -15,10 +15,6 @@ import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import java.io.File
 import javax.inject.Inject
-import android.provider.MediaStore
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
-import androidx.loader.content.CursorLoader
 import com.vadimfedchuk.myadvertising.utils.Resource
 
 
@@ -95,7 +91,6 @@ class MainViewModel : ViewModel(), LifecycleObserver {
         } else
             return null
     }
-
 
     private fun initializeDagger() = AdvertisingApplication.appComponent.inject(this)
 }

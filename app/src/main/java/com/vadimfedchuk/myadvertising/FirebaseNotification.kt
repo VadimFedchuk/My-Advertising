@@ -25,8 +25,8 @@ class FirebaseNotification : FirebaseMessagingService() {
         createNotificationChannel()
         val notificationBuilder =
             NotificationCompat.Builder(this, CHANNEL_ID)
-                .setContentTitle(remoteMessage.notification!!.title)
-                .setContentText(remoteMessage.notification!!.body)
+                .setContentTitle(remoteMessage.notification?.title)
+                .setContentText(remoteMessage.notification?.body)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setStyle(NotificationCompat.BigTextStyle())
                 .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))

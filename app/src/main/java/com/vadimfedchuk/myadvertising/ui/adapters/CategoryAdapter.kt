@@ -4,11 +4,12 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 import com.vadimfedchuk.myadvertising.R
 import kotlinx.android.synthetic.main.item_category.view.*
 
-class CategoryAdapter(val items : ArrayList<String>, val context: Context, val onClickCategory:(item: String) -> Unit) : RecyclerView.Adapter<ViewHolder>() {
+class CategoryAdapter(private val items : ArrayList<String>, val context: Context, val onClickCategory:(item: String) -> Unit) : RecyclerView.Adapter<ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
@@ -23,18 +24,17 @@ class CategoryAdapter(val items : ArrayList<String>, val context: Context, val o
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.tvAnimalType?.text = items[position]
+        holder.tvCategory?.text = items[position]
     }
 
-    // Gets the number of animals in the list
     override fun getItemCount(): Int {
         return items.size
     }
 }
 
 class ViewHolder (view: View) : RecyclerView.ViewHolder(view) {
-    // Holds the TextView that will add each animal to
-    val tvAnimalType = view.category_tv
+
+    val tvCategory: AppCompatTextView? = view.category_tv
 }
 
 fun <T : RecyclerView.ViewHolder> T.listen(event: (position: Int) -> Unit): T {

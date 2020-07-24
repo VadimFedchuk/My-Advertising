@@ -12,14 +12,7 @@ import com.vadimfedchuk.myadvertising.R
 import com.vadimfedchuk.myadvertising.utils.ShPreferences
 import kotlinx.android.synthetic.main.dialog_change_info.*
 
-class DialogChangeInfoUser : DialogFragment(){
-
-    lateinit var callback: OnConfirmChangeInfoUserCallback
-
-    companion object {
-        fun newInstance() =DialogChangeInfoUser()
-
-    }
+class DialogChangeInfoUser(private val callback:()-> Unit) : DialogFragment(){
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,12 +24,7 @@ class DialogChangeInfoUser : DialogFragment(){
         if (dialog != null && dialog!!.window != null) {
             dialog!!.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         }
-
         return view
-    }
-
-    fun setOnClickCallback(callbacks: OnConfirmChangeInfoUserCallback) {
-        callback = callbacks
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -46,12 +34,8 @@ class DialogChangeInfoUser : DialogFragment(){
         confirm_change_button.setOnClickListener {
             ShPreferences.setNameUser(name_change_et.text.toString(), requireContext())
             ShPreferences.setPasswordUser(password_change_et.text.toString(), requireContext())
-            callback.confirmChange()
+            callback.invoke()
             dismiss()
         }
     }
-}
-
-interface OnConfirmChangeInfoUserCallback {
-    fun confirmChange()
 }

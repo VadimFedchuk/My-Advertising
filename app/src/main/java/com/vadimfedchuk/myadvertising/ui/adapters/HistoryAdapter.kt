@@ -7,13 +7,14 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 import com.vadimfedchuk.myadvertising.remote.response.OrdersItem
 import com.vadimfedchuk.myadvertising.utils.CONFIRM_ORDER
 import com.vadimfedchuk.myadvertising.utils.NOT_CONFIRM_ORDER
 import kotlinx.android.synthetic.main.item_confirm_order.view.*
 
-class HistoryAdapter(val items : ArrayList<OrdersItem>, val context: Context, val onClick:(item: OrdersItem) -> Unit) : RecyclerView.Adapter<ViewHolderHistory>() {
+class HistoryAdapter(private val items : ArrayList<OrdersItem>, val context: Context, val onClick:(item: OrdersItem) -> Unit) : RecyclerView.Adapter<ViewHolderHistory>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderHistory {
 
@@ -51,10 +52,10 @@ class HistoryAdapter(val items : ArrayList<OrdersItem>, val context: Context, va
 
 class ViewHolderHistory (view: View) : RecyclerView.ViewHolder(view) {
 
-    val type = view.title_adv_tv
-    val address = view.title_address_tv
-    val period = view.period_tv
-    val price= view.price_tv
+    val type: AppCompatTextView = view.title_adv_tv
+    val address: AppCompatTextView = view.title_address_tv
+    val period: AppCompatTextView = view.period_tv
+    val price: AppCompatTextView = view.price_tv
 }
 
 fun <T : RecyclerView.ViewHolder> T.listenHistory(event: (position: Int) -> Unit): T {

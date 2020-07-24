@@ -29,7 +29,6 @@ class ConfirmLocationFragment : Fragment() {
     private val REQUEST_LOCATION: Int = 100
     private var listener: OnConfirmLocFragmentClickListener? = null
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

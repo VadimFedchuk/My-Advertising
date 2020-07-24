@@ -32,7 +32,6 @@ class MainActivity : AppCompatActivity(),
     private fun getToken() {
         FirebaseInstanceId.getInstance().instanceId
             .addOnSuccessListener { instanceIdResult ->
-                Log.i("TEST", "newtoken")
                 val deviceToken = instanceIdResult.token
                 ShPreferences.setTokenFirebase(deviceToken, this)
             }

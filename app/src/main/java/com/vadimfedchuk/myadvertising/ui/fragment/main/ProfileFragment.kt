@@ -17,7 +17,6 @@ import com.bumptech.glide.Glide
 import com.vadimfedchuk.myadvertising.R
 import com.vadimfedchuk.myadvertising.ViewModelFactory
 import com.vadimfedchuk.myadvertising.ui.dialog.DialogChangeInfoUser
-import com.vadimfedchuk.myadvertising.ui.dialog.OnConfirmChangeInfoUserCallback
 import com.vadimfedchuk.myadvertising.utils.ShPreferences
 import com.vadimfedchuk.myadvertising.utils.shortToast
 import kotlinx.android.synthetic.main.fragment_profile.*
@@ -26,7 +25,8 @@ import kotlinx.android.synthetic.main.fragment_profile.view.*
 
 const val REQUEST_GALLERY = 100
 const val PASSWORD_HINT = "**********"
-class ProfileFragment : Fragment(), OnConfirmChangeInfoUserCallback {
+
+class ProfileFragment : Fragment() {
 
     private lateinit var views:View
     private var isFirstClickPassword = false
@@ -89,12 +89,13 @@ class ProfileFragment : Fragment(), OnConfirmChangeInfoUserCallback {
     }
 
     private fun openDialog() {
-        val fragmentExpectedWage = DialogChangeInfoUser.newInstance()
-        fragmentExpectedWage.setOnClickCallback(this)
+        val fragmentExpectedWage = DialogChangeInfoUser {
+            confirmChange()
+        }
         fragmentExpectedWage.show(requireActivity().supportFragmentManager, "dialog_change_info")
     }
 
-    override fun confirmChange() {
+    private fun confirmChange() {
         initUI()
         viewModel.updateUserInfo(
             ShPreferences.getNameUser(requireContext())?:"",

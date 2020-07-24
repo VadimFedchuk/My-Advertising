@@ -2,15 +2,12 @@ package com.vadimfedchuk.myadvertising.ui.fragment.login.registration
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
-
 import com.vadimfedchuk.myadvertising.R
 import com.vadimfedchuk.myadvertising.ViewModelFactory
 import com.vadimfedchuk.myadvertising.remote.request.RegistrationRequest
@@ -92,20 +89,16 @@ class RegistrationFragment : Fragment() {
     }
 
     private fun validateView(): Boolean {
-        if(name_et.text.isEmpty()) {
+        if(name_et.text.isNullOrEmpty()) {
             getString(R.string.error_validate_et, name_et.hint).shortToast(requireContext())
             return false
         }
-        if(number_phone_et.text.isEmpty()) {
+        if(number_phone_et.text.isNullOrEmpty()) {
             getString(R.string.error_validate_et, number_phone_et.hint).shortToast(requireContext())
             return false
         }
-        if(password_et.text.isEmpty()) {
+        if(password_et.text.isNullOrEmpty()) {
             getString(R.string.error_validate_et, password_et.hint).shortToast(requireContext())
-            return false
-        }
-        if(password_et.text.length < 8) {
-            getString(R.string.error_password_length).shortToast(requireContext())
             return false
         }
         if(!switch_condition.isChecked) {

@@ -2,7 +2,6 @@ package com.vadimfedchuk.myadvertising.ui.fragment.login
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,16 +9,14 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.vadimfedchuk.myadvertising.BottomPasswordDialog
+import com.vadimfedchuk.myadvertising.ui.dialog.BottomPasswordDialog
 import com.vadimfedchuk.myadvertising.ViewModelFactory
 import com.vadimfedchuk.myadvertising.ui.fragment.login.registration.RegistrationViewModel
 import com.vadimfedchuk.myadvertising.utils.ShPreferences
 import com.vadimfedchuk.myadvertising.utils.shortToast
-import kotlinx.android.synthetic.main.fragment_enter.*
 import kotlinx.android.synthetic.main.fragment_enter.number_phone_et
 import kotlinx.android.synthetic.main.fragment_enter.password_et
 import kotlinx.android.synthetic.main.fragment_enter.view.*
-import kotlinx.android.synthetic.main.fragment_registration.*
 
 
 private const val ARG_PARAM_PASSWORD = "password"
@@ -38,7 +35,6 @@ class EnterFragment : Fragment() {
             }
         }
     }
-
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -109,11 +105,11 @@ class EnterFragment : Fragment() {
     }
 
     private fun validateView(): Boolean {
-        if(number_phone_et.text.isEmpty()) {
+        if(number_phone_et.text.isNullOrEmpty()) {
             getString(com.vadimfedchuk.myadvertising.R.string.error_validate_et, number_phone_et.hint).shortToast(requireContext())
             return false
         }
-        if(password_et.text.isEmpty()) {
+        if(password_et.text.isNullOrEmpty()) {
             getString(com.vadimfedchuk.myadvertising.R.string.error_validate_et, password_et.hint).shortToast(requireContext())
             return false
         }

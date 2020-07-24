@@ -24,9 +24,7 @@ class LoginActivity : AppCompatActivity(),
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        FirebaseInstanceId.getInstance().instanceId.addOnSuccessListener(this) { instanceIdResult: InstanceIdResult ->
-            //ShPreferences.setTokenFirebase(instanceIdResult.token, this)
-        }
+
         if(ShPreferences.getToken(this) != null) {
             openMainActivity()
         } else {
@@ -69,7 +67,6 @@ class LoginActivity : AppCompatActivity(),
                 ) != PackageManager.PERMISSION_GRANTED
             ) {
                 addFragment(ConfirmLocationFragment.newInstance())
-                //requestPermissions(arrayOf(Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE), REQUEST_CAMERA)
             } else {
                 openMainActivity()
             }

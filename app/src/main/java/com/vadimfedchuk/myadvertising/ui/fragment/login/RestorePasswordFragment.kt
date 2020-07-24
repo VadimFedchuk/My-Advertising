@@ -2,20 +2,17 @@ package com.vadimfedchuk.myadvertising.ui.fragment.login
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-
 import com.vadimfedchuk.myadvertising.R
 import com.vadimfedchuk.myadvertising.ui.fragment.login.registration.RegistrationViewModel
 import com.vadimfedchuk.myadvertising.utils.shortToast
 import kotlinx.android.synthetic.main.fragment_restore_password.*
 import kotlinx.android.synthetic.main.fragment_restore_password.view.*
-
 
 
 class RestorePasswordFragment : Fragment() {
