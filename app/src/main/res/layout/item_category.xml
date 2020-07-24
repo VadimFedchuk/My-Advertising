@@ -7,7 +7,7 @@
     android:background="@color/background_item_category"
     android:padding="8dp">
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/category_tv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -16,14 +16,14 @@
             app:layout_constraintTop_toTopOf="parent"
             android:gravity="center_vertical">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="16dp"
                 android:src="@drawable/ic_arrow_back" />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/title_back"
@@ -32,7 +32,7 @@
                 android:fontFamily="@font/avenirnext_regular_08"/>
         </LinearLayout>
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/text_one"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -46,7 +46,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:fontFamily="@font/avenirnext_demibold_03"/>
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/text_two"
         android:gravity="center"
         android:layout_width="match_parent"
@@ -93,7 +93,7 @@
 
     </com.chaos.view.PinView>
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/timer_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -112,31 +112,29 @@
         app:layout_constraintTop_toBottomOf="@id/pinView"
         app:layout_constraintVertical_bias="0.394" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/confirm_code_button"
         android:layout_width="256dp"
         android:layout_height="56dp"
-        android:layout_marginBottom="76dp"
+        android:layout_marginBottom="32dp"
         android:background="@drawable/background_button_enter"
         android:fontFamily="@font/avenirnext_demibold_03"
         android:text="@string/title_confirm"
         android:textColor="@color/text_color_blue"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/view3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent" />
 
     <View
+        android:id="@+id/view3"
         android:layout_width="100dp"
         android:layout_height="3dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/background_button_enter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enter_button"
-        app:layout_constraintVertical_bias="0.543" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,20 +9,19 @@
     android:padding="8dp"
     android:layout_marginBottom="12dp">
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/title_adv_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"
         android:fontFamily="@font/avenirnext_demibold_03"
         android:text="@string/example_title"
         android:textColor="#28292b"
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/title_address_tv"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/title_address_tv"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
@@ -31,12 +30,12 @@
         android:fontFamily="@font/avenirnext_regular_08"
         android:text="@string/example_title"
         android:textColor="#28292b"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/price_tv"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title_adv_tv" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/price_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -45,21 +44,20 @@
         android:fontFamily="@font/avenirnext_demibold_03"
         android:text="127000 \u20bd"
         android:textColor="#28292b"
-        android:textSize="15sp"
+        android:textSize="16sp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/period_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"
         android:fontFamily="@font/avenirnext_regular_08"
         android:text="@string/example_title"
         android:textColor="#919191"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/title_address_tv"
         app:layout_constraintTop_toBottomOf="@id/title_address_tv" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

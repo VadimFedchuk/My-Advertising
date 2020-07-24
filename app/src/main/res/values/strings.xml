@@ -84,4 +84,5 @@
     <string name="title_info_app">Мы предоставляем сервис аренды рекламных площадей. Постоянно расширяющийся список рекламных возможностей с быстрым доступом к ним и онлайн оплатой.</string>
     <string name="change_info_title">Введите данные для изменения</string>
     <string name="confirm_change">Подтвердить изменения</string>
+    <string name="free">Бесплатно</string>
 </resources>

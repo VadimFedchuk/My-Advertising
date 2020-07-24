@@ -12,7 +12,7 @@
     tools:context=".ui.fragment.login.EnterFragment"
     android:background="@color/main_background">
 
-    <ImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,7 +22,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/avenirnext_regular_08"
@@ -35,7 +35,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo" />
 
-    <EditText
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/number_phone_et"
         android:layout_width="318dp"
         android:layout_height="50dp"
@@ -53,7 +53,7 @@
         app:layout_constraintTop_toBottomOf="@id/logo"
         android:fontFamily="@font/avenirnext_regular_08"/>
 
-    <EditText
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/password_et"
         android:layout_width="318dp"
         android:layout_height="50dp"
@@ -71,7 +71,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/number_phone_et" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/forget_password_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -84,7 +84,7 @@
         app:layout_constraintEnd_toEndOf="@+id/password_et"
         app:layout_constraintTop_toBottomOf="@+id/password_et" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/enter_button"
         android:layout_width="256dp"
         android:layout_height="56dp"
@@ -98,7 +98,7 @@
         android:textColor="@color/text_color_blue"
         android:fontFamily="@font/avenirnext_demibold_03"/>
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/registration_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -106,7 +106,7 @@
         android:gravity="center_horizontal"
         android:text="@string/title_not_account"
         android:textColor="@color/text_color_white"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:layout_constraintTop_toBottomOf="@+id/enter_button"
         android:fontFamily="@font/avenirnext_regular_08"/>
 
@@ -121,14 +121,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registration_tv">
 
-        <ImageButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/vk_enter_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             android:src="@drawable/ic_vk" />
 
-        <ImageButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/facebook_enter_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -136,7 +136,7 @@
             android:background="@android:color/transparent"
             android:src="@drawable/ic_facebook" />
 
-        <ImageButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/google_enter_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -144,7 +144,7 @@
             android:background="@android:color/transparent"
             android:src="@drawable/ic_google" />
 
-        <ImageButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/ok_enter_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

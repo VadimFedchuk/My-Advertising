@@ -15,7 +15,7 @@
     android:id="@+id/dialog_pay_order"
     android:visibility="visible">
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/cancel_pay_order_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -29,7 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textView_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -51,7 +51,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_1" />
 
-    <ImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_copy"
@@ -60,7 +60,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"/>
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/title_adv_tv_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -73,7 +73,7 @@
         app:layout_constraintStart_toStartOf="@+id/info_order"
         app:layout_constraintTop_toTopOf="@+id/info_order" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/title_adv_address_tv_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -86,7 +86,7 @@
         app:layout_constraintStart_toStartOf="@+id/info_order"
         app:layout_constraintTop_toBottomOf="@+id/title_adv_tv" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/title_placement_period"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -99,7 +99,7 @@
         app:layout_constraintStart_toStartOf="@+id/info_order"
         app:layout_constraintTop_toBottomOf="@+id/title_adv_address_tv" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/period_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -111,7 +111,7 @@
         app:layout_constraintEnd_toEndOf="@+id/info_order"
         app:layout_constraintTop_toTopOf="@+id/title_placement_period" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/title_price_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -124,7 +124,7 @@
         app:layout_constraintStart_toStartOf="@+id/info_order"
         app:layout_constraintTop_toBottomOf="@+id/title_placement_period" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/price_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -137,7 +137,7 @@
         app:layout_constraintEnd_toEndOf="@+id/info_order"
         app:layout_constraintTop_toBottomOf="@+id/period_tv" />
 
-    <EditText
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/number_card_et"
         android:layout_width="320dp"
         android:layout_height="50dp"
@@ -152,7 +152,7 @@
         app:layout_constraintTop_toBottomOf="@+id/info_order"
         app:layout_constraintVertical_bias="0.3" />
 
-    <EditText
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/name_card_et"
         android:layout_width="320dp"
         android:layout_height="50dp"
@@ -166,7 +166,7 @@
         app:layout_constraintTop_toBottomOf="@+id/number_card_et"
         android:layout_marginTop="8dp" />
 
-    <EditText
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/date_card_et"
         android:layout_width="150dp"
         android:layout_height="50dp"
@@ -179,7 +179,7 @@
         app:layout_constraintStart_toStartOf="@+id/name_card_et"
         app:layout_constraintTop_toBottomOf="@+id/name_card_et" />
 
-    <EditText
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/cvv_card_et"
         android:layout_width="150dp"
         android:layout_height="50dp"
@@ -191,7 +191,7 @@
         android:textColorHint="@color/shadow_white"
         app:layout_constraintEnd_toEndOf="@+id/name_card_et"
         app:layout_constraintTop_toBottomOf="@+id/name_card_et" />
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/title_is_adv_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -207,7 +207,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/date_to_button" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/order_tv"
         android:layout_width="140dp"
         android:layout_height="35dp"

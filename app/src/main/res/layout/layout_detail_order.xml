@@ -15,7 +15,7 @@
     android:id="@+id/dialog_detail_order"
     android:visibility="gone">
 
-    <ImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
@@ -23,7 +23,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/close_detail_order_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -38,7 +38,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/choose_photo_order_iv"
         android:layout_width="300dp"
         android:layout_height="180dp"
@@ -66,18 +66,19 @@
     <com.iarcuschin.simpleratingbar.SimpleRatingBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/title_adv_tv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/title_adv_tv"
         app:layout_constraintTop_toBottomOf="@+id/choose_photo_order_iv"
         app:srb_borderColor="#f0f000"
         app:srb_fillColor="#f0f000"
         app:srb_numberOfStars="5"
-        android:layout_marginTop="10dp"
         app:srb_rating="4"
         app:srb_starSize="20dp"
         app:srb_stepSize="1" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/title_adv_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -90,7 +91,7 @@
         app:layout_constraintStart_toStartOf="@+id/choose_photo_order_iv"
         app:layout_constraintTop_toBottomOf="@+id/choose_photo_order_iv" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/title_adv_address_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -103,7 +104,7 @@
         app:layout_constraintStart_toStartOf="@+id/choose_photo_order_iv"
         app:layout_constraintTop_toBottomOf="@+id/title_adv_tv" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/title_price_month_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -116,7 +117,7 @@
         app:layout_constraintStart_toStartOf="@+id/choose_photo_order_iv"
         app:layout_constraintTop_toBottomOf="@+id/title_adv_address_tv" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/price_month_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -129,7 +130,7 @@
         app:layout_constraintEnd_toEndOf="@+id/choose_photo_order_iv"
         app:layout_constraintTop_toBottomOf="@+id/title_adv_address_tv" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/title_price_year_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -142,7 +143,7 @@
         app:layout_constraintStart_toStartOf="@+id/choose_photo_order_iv"
         app:layout_constraintTop_toBottomOf="@+id/title_price_month_tv" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/price_year_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -155,7 +156,7 @@
         app:layout_constraintEnd_toEndOf="@+id/choose_photo_order_iv"
         app:layout_constraintTop_toBottomOf="@+id/price_month_tv" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/title_date_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -168,7 +169,7 @@
         app:layout_constraintStart_toStartOf="@+id/choose_photo_order_iv"
         app:layout_constraintTop_toBottomOf="@+id/title_price_year_tv" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/date_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -181,7 +182,7 @@
         app:layout_constraintEnd_toEndOf="@+id/choose_photo_order_iv"
         app:layout_constraintTop_toBottomOf="@+id/price_year_tv" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/title_block_date_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -194,7 +195,7 @@
         app:layout_constraintEnd_toEndOf="@+id/choose_photo_order_iv"
         app:layout_constraintTop_toBottomOf="@+id/date_tv" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/date_from_button"
         android:layout_width="140dp"
         android:layout_height="35dp"
@@ -207,7 +208,7 @@
         app:layout_constraintStart_toStartOf="@+id/title_date_tv"
         app:layout_constraintTop_toBottomOf="@+id/title_block_date_tv" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/date_to_button"
         android:layout_width="140dp"
         android:layout_height="35dp"
@@ -220,7 +221,7 @@
         app:layout_constraintEnd_toEndOf="@id/date_tv"
         app:layout_constraintTop_toBottomOf="@+id/title_block_date_tv" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/title_is_adv_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -236,7 +237,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/date_to_button" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/order_tv"
         android:layout_width="140dp"
         android:layout_height="35dp"

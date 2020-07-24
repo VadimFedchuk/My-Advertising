@@ -17,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/textView_settings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -26,8 +26,9 @@
             android:text="@string/settings"
             android:textColor="@color/text_color_white"
             android:textSize="26sp"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteX="72dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/user_photo"
@@ -41,7 +42,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView_settings" />
 
-        <ImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/imageView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -51,7 +52,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/user_photo"
             app:layout_constraintEnd_toEndOf="@+id/user_photo" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_name_user"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -64,7 +65,7 @@
             app:layout_constraintStart_toEndOf="@+id/user_photo"
             app:layout_constraintTop_toTopOf="@id/user_photo" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/textView_change"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -79,7 +80,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_phone_user" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_phone_user"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -93,7 +94,7 @@
             app:layout_constraintStart_toEndOf="@+id/user_photo"
             app:layout_constraintTop_toBottomOf="@id/tv_name_user" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_password_user"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -109,53 +110,7 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-<!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:id="@+id/recycler_cards"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="160dp"-->
-<!--        android:layout_below="@id/layout_top"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/layout_top"-->
-<!--        tools:layout_editor_absoluteX="8dp"-->
-<!--        tools:listitem="@layout/item_card"-->
-<!--        android:layout_marginTop="10dp"-->
-<!--        android:layout_marginEnd="16dp"-->
-<!--        android:layout_marginStart="16dp"/>-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/add_card_tv"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:fontFamily="@font/avenirnext_medium_06"-->
-<!--        android:gravity="center"-->
-<!--        android:text="@string/add_card"-->
-<!--        android:textColor="@color/color_blue"-->
-<!--        android:textSize="16sp"-->
-<!--        android:layout_marginBottom="8dp"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/layout_bottom"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent" />-->
-
-
-<!--    <ImageView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:src="@drawable/ic_arrow_right_circle"-->
-<!--        app:layout_constraintBottom_toBottomOf="@+id/add_card_tv"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.081"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/add_card_tv"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/add_card_tv"-->
-<!--        app:layout_constraintVertical_bias="1.0" />-->
-
-<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--        android:id="@+id/layout_bottom"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="250dp"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:background="@drawable/background_cancel_order"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent">-->
-
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/textView_my_adv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -169,8 +124,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/layout_top" />
 
-
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/text_profile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -186,7 +140,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textView_my_adv" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/privacy_policy_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -202,7 +156,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/text_profile" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/condition_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -218,10 +172,10 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/privacy_policy_tv" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/exit_button"
         android:layout_width="256dp"
-        android:layout_height="45dp"
+        android:layout_height="50dp"
         android:background="@drawable/button_exit"
         android:fontFamily="@font/avenirnext_demibold_03"
         android:text="@string/exit"
@@ -232,7 +186,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/condition_tv"
         app:layout_constraintVertical_bias="0.8" />
-
-    <!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

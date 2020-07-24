@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:background="@drawable/background_dialog_sheet">
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_password"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_56"
@@ -21,13 +21,13 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginBottom="@dimen/dp_8"
-        android:layout_marginTop="@dimen/md_bottom_sheet_separator_top_margin"
+        android:layout_marginTop="@dimen/dp_8"
         android:background="@color/color_bottom_bar" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:layout_gravity="center"
         android:id="@+id/close_password_dialog"
-        android:layout_width="318dp"
+        android:layout_width="320dp"
         android:layout_height="50dp"
         android:layout_marginTop="12dp"
         android:background="@drawable/background_drawable_dark_blue"

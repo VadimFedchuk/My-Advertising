@@ -11,7 +11,7 @@ import com.vadimfedchuk.myadvertising.R
 import kotlinx.android.synthetic.main.activity_web_view.*
 
 
-class WebviewActivity : AppCompatActivity() {
+class WebViewActivity : AppCompatActivity() {
 
 private var url: String = ""
 
@@ -20,8 +20,8 @@ private var url: String = ""
         setContentView(R.layout.activity_web_view)
         if(intent.hasExtra("url")) {
             url = intent.getStringExtra("url")!!
+            initWebView()
         }
-        initWebView()
     }
 
     private fun initWebView() {

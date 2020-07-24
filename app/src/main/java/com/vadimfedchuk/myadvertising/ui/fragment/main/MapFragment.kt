@@ -15,7 +15,6 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.observe
 import androidx.recyclerview.widget.GridLayoutManager
 import com.bumptech.glide.Glide
 import com.google.android.gms.maps.*
@@ -25,7 +24,7 @@ import com.vadimfedchuk.myadvertising.R
 import com.vadimfedchuk.myadvertising.ViewModelFactory
 import com.vadimfedchuk.myadvertising.remote.request.CreateOrderRequest
 import com.vadimfedchuk.myadvertising.remote.response.MarkersItem
-import com.vadimfedchuk.myadvertising.ui.activity.WebviewActivity
+import com.vadimfedchuk.myadvertising.ui.activity.WebViewActivity
 import com.vadimfedchuk.myadvertising.ui.adapters.CategoryAdapter
 import com.vadimfedchuk.myadvertising.utils.*
 import kotlinx.android.synthetic.main.fragment_map.*
@@ -250,7 +249,7 @@ class MapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListe
                         startActivity(
                             Intent(
                                 requireActivity(),
-                                WebviewActivity::class.java
+                                WebViewActivity::class.java
                             ).putExtra("url", it.url))
                     } else {
                         when {

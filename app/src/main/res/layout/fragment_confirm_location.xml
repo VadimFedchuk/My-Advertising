@@ -1,4 +1,5 @@
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -6,7 +7,7 @@
     android:background="@color/main_background"
     tools:context=".ui.fragment.login.EnterFragment">
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/text_one"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -20,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:fontFamily="@font/avenirnext_demibold_03"/>
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/text_two"
         android:gravity="center"
         android:layout_width="match_parent"
@@ -36,7 +37,7 @@
         app:layout_constraintTop_toBottomOf="@id/text_one"
         android:fontFamily="@font/avenirnext_regular_08"/>
 
-    <ImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/layout_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -46,7 +47,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_two" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/text_three"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -61,32 +62,31 @@
         app:layout_constraintTop_toBottomOf="@+id/layout_view"
         tools:layout_editor_absoluteX="32dp" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/confirm_location_button"
         android:layout_width="256dp"
-        android:layout_height="56dp"
-        android:layout_marginBottom="85dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="36dp"
         android:background="@drawable/background_button_enter"
         android:fontFamily="@font/avenirnext_demibold_03"
         android:text="@string/title_turn_on"
         android:textColor="@color/text_color_blue"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/remind_later_tv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/remind_later_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/avenirnext_regular_08"
         android:gravity="center"
+        android:layout_marginBottom="24dp"
         android:text="@string/title_remind_later"
         android:textColor="@color/text_color_white"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/view"
-        app:layout_constraintTop_toBottomOf="@+id/confirm_location_button" />
-
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/view"/>
 
     <View
         android:id="@+id/view"

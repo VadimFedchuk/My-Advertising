@@ -7,7 +7,7 @@
     android:background="@color/main_background"
     tools:context=".ui.fragment.login.EnterFragment">
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/text_one"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,7 +21,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/text_two"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_one" />
 
-    <ImageView
+    <androidx.appcompat.widget.AppCompatImageView
 
         android:id="@+id/layout_view"
         android:layout_width="wrap_content"
@@ -44,7 +44,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_two" />
 
-    <EditText
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/number_phone_et"
         android:layout_width="318dp"
         android:layout_height="50dp"
@@ -61,7 +61,7 @@
         app:layout_constraintTop_toBottomOf="@id/layout_view"
         android:fontFamily="@font/avenirnext_regular_08"/>
 
-    <EditText
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/name_et"
         android:layout_width="318dp"
         android:layout_height="50dp"
@@ -78,7 +78,7 @@
         app:layout_constraintTop_toBottomOf="@id/number_phone_et"
         android:fontFamily="@font/avenirnext_regular_08"/>
 
-    <EditText
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/password_et"
         android:layout_width="318dp"
         android:layout_height="50dp"
@@ -117,7 +117,7 @@
             android:theme="@style/CustomSwitch"
             android:layout_marginEnd="8dp"/>
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/title_condition"
@@ -125,7 +125,7 @@
             android:fontFamily="@font/avenirnext_regular_08"/>
     </LinearLayout>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/registration_button"
         android:layout_width="256dp"
         android:layout_height="56dp"
@@ -139,17 +139,19 @@
         app:layout_constraintTop_toBottomOf="@+id/layout_switch"
         android:fontFamily="@font/avenirnext_demibold_03"/>
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/enter_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:fontFamily="@font/avenirnext_regular_08"
         android:gravity="center_horizontal"
         android:text="@string/title_exist_account"
         android:textColor="@color/text_color_white"
         android:textSize="14sp"
-        app:layout_constraintTop_toBottomOf="@+id/registration_button"
-        android:fontFamily="@font/avenirnext_regular_08"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registration_button" />
 
     <View
         android:layout_width="100dp"
