@@ -15,6 +15,10 @@ class FirebaseNotification : FirebaseMessagingService() {
 
     private var mNotificationManager:NotificationManager? = null
 
+    companion object {
+        var isNotifyDisabled = false
+    }
+
     override fun onNewToken(s: String) {
         super.onNewToken(s)
         ShPreferences.setTokenFirebase(s, this)
@@ -32,7 +36,9 @@ class FirebaseNotification : FirebaseMessagingService() {
                 .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setAutoCancel(true)
-        mNotificationManager?.notify(0, notificationBuilder.build())
+        if(isNotifyDisabled) {
+            mNotificationManager?.notify(0, notificationBuilder.build())
+        }
     }
 
     private fun createNotificationChannel() {

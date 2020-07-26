@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.FirebaseApp
 import com.google.firebase.iid.FirebaseInstanceId
+import com.vadimfedchuk.myadvertising.FirebaseNotification
 import com.vadimfedchuk.myadvertising.R
 import com.vadimfedchuk.myadvertising.ui.fragment.main.*
 import com.vadimfedchuk.myadvertising.utils.ShPreferences
@@ -46,7 +47,7 @@ class MainActivity : AppCompatActivity(),
 
         when(item.itemId) {
             R.id.action_profile -> addFragment(ProfileFragment.newInstance())
-            R.id.action_message -> addFragment(ChatFragment.newInstance("", ""))
+            R.id.action_message -> addFragment(ChatFragment.newInstance())
             R.id.action_history -> addFragment(HistoryFragment.newInstance("", ""))
             R.id.action_map -> addFragment(MapFragment.newInstance("", ""))
         }
@@ -87,5 +88,15 @@ class MainActivity : AppCompatActivity(),
     override fun onConfirmPressed() {
         bottom_navigation.setVisible()
         supportFragmentManager.popBackStack()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        FirebaseNotification.isNotifyDisabled = false
+    }
+
+    override fun onStop() {
+        super.onStop()
+        FirebaseNotification.isNotifyDisabled = true
     }
 }

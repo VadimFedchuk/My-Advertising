@@ -1,40 +1,61 @@
 package com.vadimfedchuk.myadvertising.ui.fragment.main
 
-import android.content.Context
-import android.net.Uri
 import android.os.Bundle
-import android.os.Message
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.iid.FirebaseInstanceId
 
 import com.vadimfedchuk.myadvertising.R
+import com.vadimfedchuk.myadvertising.ViewModelFactory
+import com.vadimfedchuk.myadvertising.ui.Message
 import com.vadimfedchuk.myadvertising.ui.adapters.ChatAdapter
-import com.vadimfedchuk.myadvertising.ui.adapters.HistoryAdapter
+import com.vadimfedchuk.myadvertising.utils.ShPreferences
+import kotlinx.android.synthetic.main.fragment_chat.*
 import kotlinx.android.synthetic.main.fragment_chat.view.*
-import kotlinx.android.synthetic.main.fragment_history.view.*
-
-
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
+import java.sql.Date
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
 class ChatFragment : Fragment() {
 
-    private var param1: String? = null
-    private var param2: String? = null
-    private var listener: OnFragmentInteractionListener? = null
     private lateinit var views:View
-    private val messages: ArrayList<com.vadimfedchuk.myadvertising.ui.Message> = ArrayList()
+    private val messages: ArrayList<Message> = ArrayList()
+    private lateinit var viewModel: MainViewModel
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+    private var fb_token:String = ""
+    private var formatDate = SimpleDateFormat("h:mm MMMMM.dd")
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        val viewModelFactory = ViewModelFactory()
+        viewModel = ViewModelProvider(this, viewModelFactory).get(
+            MainViewModel::class.java)
+        viewModel.let { lifecycle.addObserver(it) }
+        getFirebaseToken()
+    }
+
+    private fun observeData() {
+        viewModel.getMessages(ShPreferences.getTokenFirebase(requireContext())?: "").observe(viewLifecycleOwner, Observer {
+            if(it != null) {
+                it.messages.forEach{message ->
+                    messages.add(Message(
+                        it.user_id == message.sender_id,
+                        message.message,
+                        formatDate.format(Date(message.dt.toString())),
+                        "Служба поддержки",
+                        null))
+                }
+                recycler_chat.adapter?.notifyDataSetChanged()
+            }
+        })
     }
 
     override fun onCreateView(
@@ -43,11 +64,26 @@ class ChatFragment : Fragment() {
     ): View? {
         views = inflater.inflate(R.layout.fragment_chat, container, false)
         initChatList()
+
+        views.send_message_ib.setOnClickListener {
+            if(!et_message.text.isNullOrEmpty()) {
+                sendMessage()
+            }
+        }
+
         return views
     }
 
+    private fun sendMessage() {
+        viewModel.sendMessage(et_message.text.toString(), ShPreferences.getNameUser(requireContext())?: "no name", ShPreferences.getTokenFirebase(requireContext())?: "").observe(viewLifecycleOwner, Observer {
+            if(it != null && it.status.equals("OK")) {
+                messages.add(Message(true, et_message.text.toString(), "14.09.94", null, null))
+                recycler_chat.adapter?.notifyDataSetChanged()
+            }
+        })
+    }
+
     private fun initChatList() {
-        initMessages()
         val layoutManager = LinearLayoutManager(
             requireContext(),
             LinearLayoutManager.VERTICAL,
@@ -59,45 +95,20 @@ class ChatFragment : Fragment() {
             ChatAdapter(requireContext(), messages)
     }
 
-    private fun initMessages() {
-        messages.add(com.vadimfedchuk.myadvertising.ui.Message(0, false, "Здравствуйте, мы можем Вам помочь?", "07.01 19:38", "Александра", "https://c.radikal.ru/c19/2002/3a/b238b167f608.png"))
-        messages.add(com.vadimfedchuk.myadvertising.ui.Message(1, true, "Я бы хотела уточнить, есть ли ещё свободные места под рекламу на даты которые я оплатила.", "07.01 19:40", "Александра", "https://c.radikal.ru/c19/2002/3a/b238b167f608.png"))
-        messages.add(com.vadimfedchuk.myadvertising.ui.Message(2, false, "Одну минутку, мы сейчас предложим вам подходящие варианты.", "07.01 19:41", "Александра", "https://c.radikal.ru/c19/2002/3a/b238b167f608.png"))
-    }
+    fun getFirebaseToken() {
+        FirebaseInstanceId.getInstance().instanceId
+            .addOnCompleteListener(OnCompleteListener { task ->
+                if (!task.isSuccessful) {
+                    return@OnCompleteListener
+                }
+                fb_token = task.result?.token!!
+                observeData()
 
-    // TODO: Rename method, update argument and hook method into UI event
-    fun onButtonPressed(uri: Uri) {
-        listener?.onFragmentInteraction(uri)
-    }
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        if (context is OnFragmentInteractionListener) {
-            listener = context
-        } else {
-            //throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
-        }
-    }
-
-    override fun onDetach() {
-        super.onDetach()
-        listener = null
-    }
-
-    interface OnFragmentInteractionListener {
-
-        fun onFragmentInteraction(uri: Uri)
+            })
     }
 
     companion object {
-
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ChatFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        fun newInstance() = ChatFragment()
     }
 }

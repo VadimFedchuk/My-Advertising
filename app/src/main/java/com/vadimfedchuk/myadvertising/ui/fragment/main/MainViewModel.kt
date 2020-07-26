@@ -2,6 +2,7 @@ package com.vadimfedchuk.myadvertising.ui.fragment.main
 
 
 
+import android.util.Log
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -31,6 +32,9 @@ class MainViewModel : ViewModel(), LifecycleObserver {
     private var updateUserData: LiveData<LoginResponse>? = null
     private var subscribeData:LiveData<RegistrationResponse>? = null
     private var isSendFirebaseToken:Boolean = false
+
+    private var sendMessageData = MutableLiveData<SendMessageResponse>()
+    private var getMessagesData = MutableLiveData<GetMessagesResponse>()
 
     init {
         initializeDagger()
@@ -90,6 +94,24 @@ class MainViewModel : ViewModel(), LifecycleObserver {
             return subscribeData
         } else
             return null
+    }
+
+    fun getMessages(token: String):MutableLiveData<GetMessagesResponse> {
+        //getMessagesData.postValue(repository.getMessages(token)?.value)
+        repository.getMessages(token)?.let { getMessagesData = it }
+        return getMessagesData
+    }
+
+    fun sendMessage(text:String, name:String, token: String):MutableLiveData<SendMessageResponse> {
+        val message = SendMessageResponse(
+            "message",
+             name,
+            2,
+            text,
+            token
+        )
+        repository.sendMessage(message)?.let { sendMessageData = it }
+        return sendMessageData
     }
 
     private fun initializeDagger() = AdvertisingApplication.appComponent.inject(this)

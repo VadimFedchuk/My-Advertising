@@ -21,5 +21,10 @@ class RemoteContract {
         const val ADD_AVATAR_USER_PART = "users/avatar"
         const val UPDATE_INFO_USER_PART = "users/update"
 
+        const val API_URL_CHAT = "http://testmyapp.site:81/api/"
+        const val APP_USER_AGENT_CHAT= "Retrofit-Sample-App"
+        const val CONNECT_TIMEOUT = 5
+        const val READ_TIMEOUT = 5
+
     }
 }

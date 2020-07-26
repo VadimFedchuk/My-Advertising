@@ -3,6 +3,8 @@ package com.vadimfedchuk.myadvertising.di
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.vadimfedchuk.myadvertising.remote.ChatService
+import com.vadimfedchuk.myadvertising.remote.ChatServiceProvide
 import com.vadimfedchuk.myadvertising.remote.RemoteContract
 import com.vadimfedchuk.myadvertising.remote.RemoteService
 import dagger.Module
@@ -48,4 +50,7 @@ class RemoteModule {
 
     @Provides @Singleton fun provideRemoteCurrencyService(retrofit: Retrofit): RemoteService =
         retrofit.create(RemoteService::class.java)
+
+    @Provides @Singleton fun provideChatService() =
+        ChatServiceProvide.create(RemoteContract.API_URL_CHAT, RemoteContract.APP_USER_AGENT_CHAT).getApi(ChatService::class.java)
 }

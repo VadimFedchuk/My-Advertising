@@ -1,8 +1,10 @@
 package com.vadimfedchuk.myadvertising.repository
 
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.vadimfedchuk.myadvertising.remote.ChatService
 import com.vadimfedchuk.myadvertising.remote.RemoteService
 import com.vadimfedchuk.myadvertising.remote.request.CreateOrderRequest
 import com.vadimfedchuk.myadvertising.remote.request.FirebaseTokenRequest
@@ -13,12 +15,16 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import okhttp3.MultipartBody
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
 class AdvertisingRepository @Inject constructor(
-    private val remoteService: RemoteService
+    private val remoteService: RemoteService,
+    private val chatService: ChatService
 ) : Repository {
 
     val allCompositeDisposable: MutableList<Disposable> = arrayListOf()
@@ -202,5 +208,36 @@ class AdvertisingRepository @Inject constructor(
             })
         allCompositeDisposable.add(disposable)
         return mutableData
+    }
+
+    fun sendMessage(message: SendMessageResponse) =
+        sendRequest(chatService.sendMessage(
+            message.message,
+            message.name,
+            message.recipient,
+            message.content,
+            message.token
+        ))
+
+    fun getMessages(token: String) =
+        sendRequest(chatService.getMessagesByToken(token))
+
+    private fun <T> sendRequest(call: Call<T>?): MutableLiveData<T>? {
+        val data = MutableLiveData<T>()
+        call?.enqueue(object : Callback<T> {
+            override fun onFailure(call: Call<T>?, t: Throwable?) {
+
+                data.value = null
+            }
+
+            override fun onResponse(call: Call<T>?, response: Response<T>?) {
+                if (response?.code()==200) {
+                    data.value = response.body()!!
+                } else {
+                    data.value = null
+                }
+            }
+        })
+        return data
     }
 }
